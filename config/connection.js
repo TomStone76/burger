@@ -7,3 +7,5 @@ var connection = mysql.createConnection({
     password: "root",
     database: "burgers_db"
 });
+
+module.exports = connection;
