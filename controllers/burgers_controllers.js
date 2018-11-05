@@ -15,3 +15,5 @@ router.put("/api/cats/:id", function(req, res) {
 router.delete("/api/cats/:id", function(req, res) {
 
 });
+
+module.exports = router;
