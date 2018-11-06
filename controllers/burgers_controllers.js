@@ -4,8 +4,8 @@ var burger = require("models/burger.js");
 
 var router = express.Router();
 
-router.get("/", function(req, res) {
-    burger.all(function(data) { 
+router.get("/", function (req, res) {
+    burger.all(function (data) {
         var bObject = {
             burgers: data
         };
@@ -14,18 +14,21 @@ router.get("/", function(req, res) {
     });
 });
 
-router.post("/api/burgers", function(req, res) {
+router.post("/api/burgers", function (req, res) {
     burger.create([
         "name", devoured
     ], [
         req.body.name, req.body.devoured
+    ], function (result) {
+        res.json({ id: result.insertId });
+    });
 });
 
-router.put("/api/burgers/:id", function(req, res) {
+router.put("/api/burgers/:id", function (req, res) {
 
 });
 
-router.delete("/api/burgers/:id", function(req, res) {
+router.delete("/api/burgers/:id", function (req, res) {
 
 });
 
