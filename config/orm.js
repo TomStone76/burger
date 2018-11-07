@@ -1,8 +1,17 @@
 var connection = require("connection.js");
 
-function selectAll() {
 
-}
+var orm = {
+
+all: function (tableInput, cb) {
+    var queryString = "SELECT * FROM " + tableInput + ";";
+    connection.query(queryString, function(err, results) {
+        if (err) {
+            throw err;
+        }
+        cb(result);
+    });
+},
 
 function insertOne() {
 
@@ -11,3 +20,5 @@ function insertOne() {
 function update() {
 
 }
+
+module.exports = orm;
