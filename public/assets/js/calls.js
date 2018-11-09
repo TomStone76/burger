@@ -8,7 +8,7 @@ $(function () {
     // )
 
 
-    // $(".add-button").on("click", function (event) {
+    // $(".add-button").on("click", function (event) {  /// This should refer to a different button
     //     var id = $(this).data("id");
     //     var newState = $(this).data("newstatus");
 
