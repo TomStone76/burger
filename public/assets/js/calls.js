@@ -8,24 +8,19 @@ $(function () {
     // )
 
 
-    // $(".add-button").on("click", function (event) {  /// This should refer to a different button
-    //     var id = $(this).data("id");
-    //     var newState = $(this).data("newstatus");
+    // $(".devour-button").on("click", function (event) {  /// This should refer to a different button
+    //     event.preventDefault();
 
-    //     var newDevouredState = {
-    //         devoured: newState
-    //     };
+    //     var id = $(this).data("movieid");
+    //     var devouredStatus = 
 
-    //     $.ajax("/api/burgers/" + id, {
-    //         type: "PUT",
-    //         data: newDevouredState
-    //     }).then(
-    //         function () {
-    //             console.log("changed status to " + newState);
-    //             location.reload();
-    //         }
-    //     );
+    //     $.ajax("/api/burgers" + id, {
+    //         type: "PUT"
+    //     }
+
+        
     // });
+
     $("#create-burger").on("click", function (event) {
         event.preventDefault()
 

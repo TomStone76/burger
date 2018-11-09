@@ -8,21 +8,25 @@ Create a button in index.handlebars that will submit the user input into the dat
 
 <ul>
     {{#each burgers}}
+    {{#if devoured}}
+    {{> burgers/burger-block devoured=false}}
+    {{/if}}
+    {{/each}}
+</ul>
+
+
+<h2>Burgers to be Devoured</h2>
+
+<ul>
+    {{#each burgers}}
+    {{this.name}}
+    <button data-burgername="{{this.id}}" class="devour-button">Devour it!</button>
     {{#unless devoured}}
     {{> burgers/burger-block devoured=true}}
     {{/unless}}
     {{/each}}
 </ul>
 
-<h2>Burgers to be Devoured</h2>
-
-<ul>
-    {{#each burgers}}
-    {{#if devoured}}
-    {{> burgers/burger-block devoured=false}}
-    {{/if}}
-    {{/each}}
-</ul>
 
 <h2>Add a Burger</h2>
 {{!-- <form class="create-form"> --}}
@@ -33,4 +37,4 @@ Create a button in index.handlebars that will submit the user input into the dat
     </div>
 
     <button id="create-burger" class="add-button">Add Burger</button>
-{{!-- </form> --}}
+    {{!-- </form> --}}
