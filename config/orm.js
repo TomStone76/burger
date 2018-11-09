@@ -1,6 +1,6 @@
 var connection = require("../config/connection.js");
 
-
+//More or less use exact code from cat app
 var orm = {
 
     all: function (tableInput, cb) {

@@ -1,36 +1,46 @@
 $(function () {
-            $(".add-button").on("click", function (event) {
-                    var id = $(this).data("id");
-                    var newState = $(this.data("newstatus");
+    // $.ajax("/api/burgers", {
+    //     type: "GET"
+    // }).then(
+    //     function(data) {
+    //         console.log(data);
+    //     }
+    // )
 
-                        var newDevouredState = {
-                            devoured: newState
-                        };
 
-                        $.ajax("/api/cats/" + id, {
-                            type: "PUT",
-                            data: newDevouredState
-                        }).then(
-                            function () {
-                                console.log("changed status to " + newState);
-                                location.reload();
-                            }
-                        );
-                    }); $("create-form").on("submit", function (event) {
-                    event.preventDefault()
+    // $(".add-button").on("click", function (event) {
+    //     var id = $(this).data("id");
+    //     var newState = $(this).data("newstatus");
 
-                    var newBurger = {
-                        name: $("#bu").val().trim()
-                    };
+    //     var newDevouredState = {
+    //         devoured: newState
+    //     };
 
-                    $.ajax("/api/burgers", {
-                        type: "POST",
-                        data: newBurger
-                    }).then(
-                        function () {
-                            console.log("created new burger");
-                            location.reload();
-                        }
-                    );
-                });
-            });
+    //     $.ajax("/api/burgers/" + id, {
+    //         type: "PUT",
+    //         data: newDevouredState
+    //     }).then(
+    //         function () {
+    //             console.log("changed status to " + newState);
+    //             location.reload();
+    //         }
+    //     );
+    // });
+    $("#create-burger").on("click", function (event) {
+        event.preventDefault()
+
+        var newBurger = {
+            name: $("#bu").val().trim()
+        };
+
+        $.ajax("/api/burgers", {
+            type: "POST",
+            data: newBurger
+        }).then(
+            function () {
+                console.log("created new burger");
+                location.reload();
+            }
+        );
+    });
+});
