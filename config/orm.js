@@ -9,15 +9,15 @@ function printQuestionMarks(num) {
     return arr.toString();
 }
 
-function objToSql(ob) {
-    var value = ob[key];
-    if (Object.hasOwnProperty.call(ob, key)) {
-        if (typeof value === "string" && value.indexOf(" ") >= 0) {
-            value = "'" + value + "'";
-        }
-        arr.push(key + "=" + value);
-    }
-}
+// function objToSql(ob) {
+//     var value = ob[key];
+//     if (Object.hasOwnProperty.call(ob, key)) {
+//         if (typeof value === "string" && value.indexOf(" ") >= 0) {
+//             value = "'" + value + "'";
+//         }
+//         arr.push(key + "=" + value);
+//     }
+// }
 
 var orm = {
     all: function (tableInput, cb) {
@@ -50,7 +50,14 @@ var orm = {
     update: function (table, objColVals, condition, cb) {
         var queryString = "UPDATE " + table;
         queryString += " SET ";
-        queryString += objToSql(objColVals);
+        ////{devoured: false}
+        // queryString += objColVals
+        var keys = Object.keys(objColVals);
+        console.log(keys);
+        for(var i =0; i<keys.length; i++){
+            queryString += keys[i]+ "=" + objColVals[keys[i]];
+        }
+        // queryString += objToSql(objColVals);
         queryString += " WHERE ";
         queryString += condition;
 
