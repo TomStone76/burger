@@ -1,6 +1,6 @@
 # burger
 
-This is a full stack restaurant application. It allows customers or people in the restaurant injury to add burgers to a database and to keep track of which ones have been eaten. Whether the user is a foodie keeping tack of what they want to eat or somebody working in or managing a burger-oriented restaurant, this app can help.
+This is a full stack restaurant application. It allows customers or people in the restaurant industry to add burgers to a database and to keep track of which ones have been eaten. Whether the user is a foodie keeping tack of what they want to eat or somebody working in or managing a burger-oriented restaurant, this app can help.
 
 Technologies used: JavaScript, JQuery, HTML, Handlebars, CSS, Bootstrap, Node.js, SQL and MySQL
 
