@@ -12,3 +12,5 @@ To use the app, follow these steps:
 5. Run the app by typing this command in the terminal: node server.js
 
 ![Screenshot](public/assets/img/eatburger.png)
+
+© 2018 Thomas Joseph Stone
